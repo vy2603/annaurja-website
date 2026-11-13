@@ -27,59 +27,71 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 font-body text-xs">
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
-                The Problem
-              </span>
-              <p className="text-white/80 leading-relaxed">
-                No tool tells a farmer, developer or bank, farm by farm, which crops and panel layout make solar on farmland pay.
-              </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-6 font-body text-xs items-stretch">
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between min-h-[110px]">
+              <div>
+                <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
+                  The Problem
+                </span>
+                <p className="text-white/80 leading-relaxed">
+                  No tool tells a farmer, developer or bank, farm by farm, which crops and panel layout make solar on farmland pay.
+                </p>
+              </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
-                The Solution
-              </span>
-              <p className="text-white/80 leading-relaxed">
-                AI agrivoltaics planner with site-specific shade maps, dual yield/power cashflow, and a free Hindi farmer voice.
-              </p>
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between min-h-[110px]">
+              <div>
+                <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
+                  The Solution
+                </span>
+                <p className="text-white/80 leading-relaxed">
+                  AI agrivoltaics planner with site-specific shade maps, dual yield/power cashflow, and a free Hindi farmer voice.
+                </p>
+              </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
-                Primary Customer
-              </span>
-              <p className="text-white/80 leading-relaxed">
-                Solar developers pay (Developer Pro subscription); FPOs, priority-sector banks, and state DISCOMs follow.
-              </p>
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between min-h-[110px]">
+              <div>
+                <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
+                  Primary Customer
+                </span>
+                <p className="text-white/80 leading-relaxed">
+                  Solar developers pay (Developer Pro subscription); FPOs, priority-sector banks, and state DISCOMs follow.
+                </p>
+              </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
-                Google AI Stack
-              </span>
-              <p className="text-white/80 leading-relaxed">
-                Gemini API, Gemini Live, Gemma, Nano Banana, Google Earth Engine, Google DeepMind ALU/AMED, Google Cloud.
-              </p>
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between min-h-[110px]">
+              <div>
+                <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
+                  Google AI Stack
+                </span>
+                <p className="text-white/80 leading-relaxed">
+                  Gemini API, Gemini Live, Gemma, Nano Banana, Google Earth Engine, Google DeepMind ALU/AMED, Google Cloud.
+                </p>
+              </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
-                Founding Team
-              </span>
-              <p className="text-white/80 leading-relaxed">
-                Vanshika Sharma (CEO), Yash Saini (CTO), Sithiraiselvan P M (Head of Research and Hardware).
-              </p>
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between min-h-[110px]">
+              <div>
+                <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
+                  Founding Team
+                </span>
+                <p className="text-white/80 leading-relaxed">
+                  Vanshika Sharma (CEO), Yash Saini (CTO), Sithiraiselvan P M (Head of Research and Hardware).
+                </p>
+              </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-white/5 border border-white/10">
-              <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
-                Mission Tagline
-              </span>
-              <p className="text-white/80 leading-relaxed font-display text-sm italic">
-                "Anna bhi, Urja bhi. Grow food and power on the same land."
-              </p>
+            <div className="p-4 sm:p-5 rounded-xl bg-white/5 border border-white/10 flex flex-col justify-between min-h-[110px]">
+              <div>
+                <span className="text-gold font-semibold uppercase tracking-wider block mb-1">
+                  Mission Tagline
+                </span>
+                <p className="text-white/80 leading-relaxed font-display text-sm italic">
+                  "Anna bhi, Urja bhi. Grow food and power on the same land."
+                </p>
+              </div>
             </div>
           </div>
         </div>

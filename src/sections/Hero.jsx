@@ -319,7 +319,7 @@ export default function Hero() {
         <div ref={ctaRef} className="opacity-0">
           <a
             href="#solution"
-            className="inline-flex items-center gap-2.5 sm:gap-3 bg-gold hover:bg-[#a67926] text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-body text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 shadow-xl hover:shadow-2xl active:scale-95"
+            className="btn-gold px-7 py-3.5 sm:px-9 sm:py-4 text-xs sm:text-sm tracking-wider"
           >
             <span>See how it works</span>
             <svg
@@ -328,7 +328,7 @@ export default function Hero() {
               stroke="currentColor"
               viewBox="0 0 24 24"
             >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
             </svg>
           </a>
         </div>

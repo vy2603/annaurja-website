@@ -186,8 +186,23 @@ export default function WhyNow() {
                 Every new project needs a site-specific plan that keeps farming going."
               </blockquote>
 
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-2 text-[10px] sm:text-xs text-white/50 font-body">
-                <span>Budget 2026–27 PM-KUSUM allocation: ₹5,000 crore</span>
+              <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <a
+                  href="#solution"
+                  className="btn-gold px-5 py-2.5 text-xs tracking-wider"
+                >
+                  <span>Explore 5-Step Solution</span>
+                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+                <span className="text-[11px] text-gold font-medium">
+                  Budget 2026–27: ₹5,000 Cr Allocation
+                </span>
+              </div>
+
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-3 border-t border-white/10 text-[10px] sm:text-xs text-white/50 font-body">
+                <span>PM-KUSUM Component A 10,000 MW Target</span>
                 <span>Sources: The Policy Edge; Drishti IAS; Anantam IAS</span>
               </div>
             </div>

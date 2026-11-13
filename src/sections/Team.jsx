@@ -85,12 +85,12 @@ export default function Team() {
         </div>
 
         {/* 3 Team Member Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-10 sm:mb-16 items-stretch">
           {team.map((m, idx) => (
             <div
               key={m.name}
               ref={(el) => (cardsRef.current[idx] = el)}
-              className="bg-white rounded-2xl border border-border p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-gold/50 transition-all flex flex-col justify-between group"
+              className="bg-white rounded-2xl border border-border p-6 sm:p-8 shadow-sm hover:shadow-xl hover:border-gold/50 transition-all flex flex-col justify-between min-h-[440px] sm:min-h-[480px] group"
             >
               <div>
                 {/* Photo with frame */}
@@ -137,6 +137,19 @@ export default function Team() {
           <p className="font-display text-sm sm:text-base md:text-lg text-green font-medium italic leading-relaxed">
             "Research keeps the science honest, software ships the product, and B2B sales with an in-house marketing studio reaches developers and farmers at low cost."
           </p>
+        </div>
+
+        {/* Bottom Action CTA */}
+        <div className="mt-8 sm:mt-10 text-center">
+          <a
+            href="#solution"
+            className="btn-gold px-8 py-3.5 text-xs sm:text-sm tracking-wider"
+          >
+            <span>Launch AnnaUrja Planner</span>
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

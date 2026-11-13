@@ -113,14 +113,14 @@ export default function Roadmap() {
         </div>
 
         {/* 4 Phases Sliding / Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 items-stretch">
           {phases.map((p, idx) => {
             const isActive = p.status === 'active'
             return (
               <div
                 key={p.phase}
                 ref={(el) => (cardsRef.current[idx] = el)}
-                className={`rounded-2xl p-5 sm:p-7 border flex flex-col justify-between transition-all duration-300 ${
+                className={`rounded-2xl p-5 sm:p-7 border flex flex-col justify-between min-h-[420px] sm:min-h-[470px] transition-all duration-300 ${
                   isActive
                     ? 'bg-white/15 border-gold shadow-2xl ring-1 ring-gold/40'
                     : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-gold/30'

@@ -142,37 +142,45 @@ export default function Benefits() {
               </p>
             </div>
 
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 items-stretch">
               {/* Option A: Leasing */}
-              <div className="bg-white/10 rounded-xl p-5 sm:p-6 border border-white/15">
-                <span className="text-[11px] sm:text-xs text-gold uppercase tracking-wider font-semibold block mb-1">
-                  Option A · Developer Lease
-                </span>
-                <div ref={num25Ref} className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1.5 sm:mb-2">
-                  ₹25,000
+              <div className="bg-white/10 rounded-xl p-5 sm:p-6 border border-white/15 flex flex-col justify-between min-h-[175px]">
+                <div>
+                  <span className="text-[11px] sm:text-xs text-gold uppercase tracking-wider font-semibold block mb-1">
+                    Option A · Developer Lease
+                  </span>
+                  <div ref={num25Ref} className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1.5">
+                    ₹25,000
+                  </div>
+                  <p className="text-xs text-white/80 font-body">
+                    per acre per year paid by the solar developer
+                  </p>
                 </div>
-                <p className="text-xs text-white/80 font-body mb-2">
-                  per acre per year paid by the solar developer
-                </p>
-                <span className="text-[10px] sm:text-[11px] text-gold font-medium">
-                  + 100% of the crop harvest income
-                </span>
+                <div className="pt-3 mt-3 border-t border-white/10">
+                  <span className="text-[10px] sm:text-[11px] text-gold font-medium block">
+                    + 100% of the crop harvest income
+                  </span>
+                </div>
               </div>
 
               {/* Option B: Bank Loan Plant Ownership */}
-              <div className="bg-white/10 rounded-xl p-5 sm:p-6 border border-white/15">
-                <span className="text-[11px] sm:text-xs text-gold uppercase tracking-wider font-semibold block mb-1">
-                  Option B · Farmer Plant Ownership
-                </span>
-                <div ref={num65Ref} className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1.5 sm:mb-2">
-                  ₹65,000
+              <div className="bg-white/10 rounded-xl p-5 sm:p-6 border border-white/15 flex flex-col justify-between min-h-[175px]">
+                <div>
+                  <span className="text-[11px] sm:text-xs text-gold uppercase tracking-wider font-semibold block mb-1">
+                    Option B · Farmer Plant Ownership
+                  </span>
+                  <div ref={num65Ref} className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1.5">
+                    ₹65,000
+                  </div>
+                  <p className="text-xs text-white/80 font-body">
+                    per acre per year owning the plant with a bank loan
+                  </p>
                 </div>
-                <p className="text-xs text-white/80 font-body mb-2">
-                  per acre per year owning the plant with a bank loan
-                </p>
-                <span className="text-[10px] sm:text-[11px] text-gold font-medium">
-                  + 100% of the crop harvest income
-                </span>
+                <div className="pt-3 mt-3 border-t border-white/10">
+                  <span className="text-[10px] sm:text-[11px] text-gold font-medium block">
+                    + 100% of the crop harvest income
+                  </span>
+                </div>
               </div>
             </div>
           </div>
@@ -217,13 +225,28 @@ export default function Benefits() {
               {stakeholders[selectedStakeholder].offer}
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 pt-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 pt-1 mb-6">
               {stakeholders[selectedStakeholder].benefits.map((benefit, i) => (
                 <div key={i} className="p-3.5 sm:p-4 rounded-xl bg-cream border border-border/60 text-xs text-grey font-body leading-relaxed flex items-start gap-2 sm:gap-2.5">
                   <span className="text-gold font-bold">✓</span>
                   <span>{benefit}</span>
                 </div>
               ))}
+            </div>
+
+            <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-t border-border/60">
+              <span className="text-xs text-grey font-body">
+                Model: <strong>Developer Pro SaaS + Per-DPR bank fees</strong>
+              </span>
+              <a
+                href="#solution"
+                className="btn-gold px-5 py-2.5 text-xs tracking-wider"
+              >
+                <span>Test Interactive Planner</span>
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
             </div>
           </div>
         </div>
@@ -242,13 +265,13 @@ export default function Benefits() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 items-stretch">
             {revenueScenarios.map((scen, idx) => (
               <div
                 key={scen.tier}
-                className={`p-5 sm:p-6 rounded-xl border flex flex-col justify-between ${
+                className={`p-5 sm:p-6 rounded-xl border flex flex-col justify-between min-h-[190px] ${
                   idx === 1
-                    ? 'bg-cream border-gold ring-1 ring-gold/40'
+                    ? 'bg-cream border-gold ring-1 ring-gold/40 shadow-md'
                     : 'bg-white border-border'
                 }`}
               >

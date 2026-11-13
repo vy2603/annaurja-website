@@ -135,20 +135,20 @@ export default function Solution() {
         </div>
 
         {/* 5-Step Horizontal Swipeable Navigation Tabs for Mobile & Desktop */}
-        <div className="flex overflow-x-auto no-scrollbar gap-2.5 pb-2 mb-8 sm:mb-12 snap-x touch-pan-x">
+        <div className="flex overflow-x-auto no-scrollbar gap-2.5 pb-2 mb-8 sm:mb-12 snap-x touch-pan-x items-stretch">
           {steps.map((s, idx) => {
             const isActive = activeStep === idx
             return (
               <button
                 key={s.num}
                 onClick={() => setActiveStep(idx)}
-                className={`p-3.5 sm:p-4 rounded-xl border text-left transition-all duration-300 shrink-0 min-w-[155px] sm:min-w-0 sm:flex-1 snap-start touch-manipulation ${
+                className={`p-3.5 sm:p-4 rounded-xl border text-left transition-all duration-300 shrink-0 min-w-[155px] sm:min-w-0 sm:flex-1 min-h-[84px] sm:min-h-[92px] flex flex-col justify-between snap-start touch-manipulation ${
                   isActive
-                    ? 'bg-white border-gold shadow-md ring-2 ring-gold/20 -translate-y-0.5'
+                    ? 'bg-white border-gold shadow-md ring-2 ring-gold/25 -translate-y-0.5'
                     : 'bg-white/60 border-border hover:bg-white hover:border-gold/40'
                 }`}
               >
-                <div className="flex items-center justify-between mb-1 sm:mb-2">
+                <div className="flex items-center justify-between mb-1">
                   <span
                     className={`font-display text-xs font-bold ${
                       isActive ? 'text-gold' : 'text-grey'
@@ -156,16 +156,20 @@ export default function Solution() {
                   >
                     {s.num}
                   </span>
-                  {isActive && (
-                    <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" />
+                  {isActive ? (
+                    <span className="w-2 h-2 rounded-full bg-gold animate-pulse" />
+                  ) : (
+                    <span className="text-[10px] text-grey/60 font-body">Step</span>
                   )}
                 </div>
-                <h4 className="font-display text-xs sm:text-sm font-semibold text-green mb-0.5 line-clamp-1">
-                  {s.title}
-                </h4>
-                <p className="text-[10px] sm:text-[11px] text-grey line-clamp-1 font-body">
-                  {s.subtitle}
-                </p>
+                <div>
+                  <h4 className="font-display text-xs sm:text-sm font-semibold text-green leading-snug line-clamp-1">
+                    {s.title}
+                  </h4>
+                  <p className="text-[10px] sm:text-[11px] text-grey line-clamp-1 font-body mt-0.5">
+                    {s.subtitle}
+                  </p>
+                </div>
               </button>
             )
           })}
@@ -303,19 +307,36 @@ export default function Solution() {
               </div>
 
               {/* Dynamic Live Calculations Display */}
-              <div className="grid grid-cols-3 gap-2 p-3 rounded-xl bg-green text-white text-center">
-                <div>
-                  <span className="text-[9px] sm:text-[10px] text-white/60 block">Solar Power</span>
-                  <strong className="text-xs sm:text-sm font-display text-gold">{powerOutput} MWp</strong>
+              <div className="grid grid-cols-3 gap-2 p-2.5 sm:p-3 rounded-xl bg-[#122217] text-white text-center border border-gold/30 mb-4">
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex flex-col justify-center min-h-[58px]">
+                  <span className="text-[9px] sm:text-[10px] text-white/65 uppercase tracking-wider block font-body">Solar Power</span>
+                  <strong className="text-xs sm:text-sm font-display text-gold mt-0.5">{powerOutput} MWp</strong>
                 </div>
-                <div>
-                  <span className="text-[9px] sm:text-[10px] text-white/60 block">Crop Yield</span>
-                  <strong className="text-xs sm:text-sm font-display text-white">{cropYieldFactor}%</strong>
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex flex-col justify-center min-h-[58px]">
+                  <span className="text-[9px] sm:text-[10px] text-white/65 uppercase tracking-wider block font-body">Crop Yield</span>
+                  <strong className="text-xs sm:text-sm font-display text-white mt-0.5">{cropYieldFactor}%</strong>
                 </div>
-                <div>
-                  <span className="text-[9px] sm:text-[10px] text-white/60 block">Lease Value</span>
-                  <strong className="text-xs sm:text-sm font-display text-gold">₹{farmerEarningEst}/yr</strong>
+                <div className="p-2 rounded-lg bg-white/5 border border-white/10 flex flex-col justify-center min-h-[58px]">
+                  <span className="text-[9px] sm:text-[10px] text-white/65 uppercase tracking-wider block font-body">Lease Return</span>
+                  <strong className="text-xs sm:text-sm font-display text-gold mt-0.5">₹{farmerEarningEst}/yr</strong>
                 </div>
+              </div>
+
+              {/* Step Navigation Pill Buttons */}
+              <div className="flex items-center justify-between gap-3 pt-1">
+                <button
+                  onClick={() => setActiveStep((prev) => (prev > 0 ? prev - 1 : steps.length - 1))}
+                  className="px-3.5 py-2 rounded-full border border-border text-xs font-semibold text-green hover:border-gold hover:text-gold transition-colors flex items-center gap-1.5 touch-manipulation"
+                >
+                  <span>‹ Previous</span>
+                </button>
+
+                <button
+                  onClick={() => setActiveStep((prev) => (prev < steps.length - 1 ? prev + 1 : 0))}
+                  className="btn-gold px-4 py-2 text-xs"
+                >
+                  <span>{activeStep < steps.length - 1 ? 'Next Step ›' : 'Restart Tour ↺'}</span>
+                </button>
               </div>
             </div>
           </div>

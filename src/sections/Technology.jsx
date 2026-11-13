@@ -130,12 +130,12 @@ export default function Technology() {
         </div>
 
         {/* 4-Stage Flow Diagram */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16 items-stretch">
           {stages.map((stage, idx) => (
             <div
               key={stage.num}
               ref={(el) => (columnsRef.current[idx] = el)}
-              className="bg-white rounded-2xl border border-border p-5 sm:p-7 shadow-sm hover:shadow-md hover:border-gold/50 transition-all flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-border p-5 sm:p-7 shadow-sm hover:shadow-md hover:border-gold/50 transition-all flex flex-col justify-between min-h-[360px] sm:min-h-[410px]"
             >
               <div>
                 <div className="flex items-center justify-between mb-3 sm:mb-4">
@@ -164,13 +164,17 @@ export default function Technology() {
                 </ul>
               </div>
 
-              {stage.highlight && (
-                <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-border/60">
+              <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-border/60">
+                {stage.highlight ? (
                   <span className="text-[11px] font-semibold text-gold italic block">
                     {stage.highlight}
                   </span>
-                </div>
-              )}
+                ) : (
+                  <span className="text-[11px] text-grey/60 block">
+                    Integrated directly with AnnaUrja core engine
+                  </span>
+                )}
+              </div>
             </div>
           ))}
         </div>

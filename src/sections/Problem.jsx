@@ -220,6 +220,19 @@ export default function Problem() {
               )
             })}
 
+            {/* Action CTA & Bottom Kicker */}
+            <div className="pt-2">
+              <a
+                href="#solution"
+                className="btn-emerald w-full sm:w-auto px-6 py-3 text-xs tracking-wider"
+              >
+                <span>See How AnnaUrja Solves This in 5 Steps</span>
+                <svg className="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
             {/* Bottom Kicker & Citation */}
             <div className="pt-5 border-t border-border mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-center gap-3">

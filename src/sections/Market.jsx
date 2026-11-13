@@ -117,58 +117,66 @@ export default function Market() {
             </span>
 
             <div className="bg-white rounded-2xl border border-border p-4 sm:p-6 shadow-sm">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 items-stretch">
                 {/* Quadrant 1: India, Policy Level */}
-                <div className="p-4 sm:p-5 rounded-xl border border-border bg-cream/40">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-grey block mb-1">
-                    India · Policy Level
-                  </span>
-                  <h4 className="font-display text-sm sm:text-base font-semibold text-green mb-1">
-                    TERI AgriPV &amp; IAA Tools
-                  </h4>
-                  <p className="text-xs text-grey font-body leading-relaxed">
+                <div className="p-4 sm:p-5 rounded-xl border border-border bg-cream/40 flex flex-col justify-between min-h-[150px]">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-grey block mb-1">
+                      India · Policy Level
+                    </span>
+                    <h4 className="font-display text-sm sm:text-base font-semibold text-green mb-1">
+                      TERI AgriPV &amp; IAA Tools
+                    </h4>
+                  </div>
+                  <p className="text-xs text-grey font-body leading-relaxed mt-2">
                     Macro policy-level simulation; cannot evaluate a single farmer's plot boundary or specific crop yields.
                   </p>
                 </div>
 
                 {/* Quadrant 2: India, Farm-Specific (ANNAURJA HIGHLIGHTED) */}
-                <div className="p-4 sm:p-5 rounded-xl border-2 border-gold bg-gold/10 shadow-md relative">
-                  <span className="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full bg-gold text-white text-[9px] font-bold tracking-wider uppercase">
+                <div className="p-4 sm:p-5 rounded-xl border-2 border-gold bg-gold/15 shadow-md relative flex flex-col justify-between min-h-[150px]">
+                  <span className="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full bg-gold text-white text-[9px] font-bold tracking-wider uppercase shadow-sm">
                     Our Position
                   </span>
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-gold block mb-1">
-                    India · Farm-Specific
-                  </span>
-                  <h4 className="font-display text-base sm:text-lg font-bold text-green mb-1">
-                    AnnaUrja
-                  </h4>
-                  <p className="text-xs text-green/90 font-body font-medium leading-relaxed">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-gold block mb-1">
+                      India · Farm-Specific
+                    </span>
+                    <h4 className="font-display text-base sm:text-lg font-bold text-green mb-1">
+                      AnnaUrja
+                    </h4>
+                  </div>
+                  <p className="text-xs text-green font-body font-medium leading-relaxed mt-2">
                     Site-specific crop ranking, 3D panel shade maps, grid tariff verification &amp; bilingual farmer voice.
                   </p>
                 </div>
 
                 {/* Quadrant 3: Global, Energy Only */}
-                <div className="p-4 sm:p-5 rounded-xl border border-border bg-cream/40">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-grey block mb-1">
-                    Global · Energy Only
-                  </span>
-                  <h4 className="font-display text-sm sm:text-base font-semibold text-green mb-1">
-                    PVsyst, RatedPower, HelioScope
-                  </h4>
-                  <p className="text-xs text-grey font-body leading-relaxed">
+                <div className="p-4 sm:p-5 rounded-xl border border-border bg-cream/40 flex flex-col justify-between min-h-[150px]">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-grey block mb-1">
+                      Global · Energy Only
+                    </span>
+                    <h4 className="font-display text-sm sm:text-base font-semibold text-green mb-1">
+                      PVsyst, RatedPower, HelioScope
+                    </h4>
+                  </div>
+                  <p className="text-xs text-grey font-body leading-relaxed mt-2">
                     Industrial solar design only. Zero agronomy, zero crop yield modelling, no farmer income calculations.
                   </p>
                 </div>
 
                 {/* Quadrant 4: Europe, Proprietary Hardware */}
-                <div className="p-4 sm:p-5 rounded-xl border border-border bg-cream/40">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-grey block mb-1">
-                    Europe · Proprietary
-                  </span>
-                  <h4 className="font-display text-sm sm:text-base font-semibold text-green mb-1">
-                    Sun'Agri, Ombrea
-                  </h4>
-                  <p className="text-xs text-grey font-body leading-relaxed">
+                <div className="p-4 sm:p-5 rounded-xl border border-border bg-cream/40 flex flex-col justify-between min-h-[150px]">
+                  <div>
+                    <span className="text-[10px] uppercase font-bold tracking-wider text-grey block mb-1">
+                      Europe · Proprietary
+                    </span>
+                    <h4 className="font-display text-sm sm:text-base font-semibold text-green mb-1">
+                      Sun'Agri, Ombrea
+                    </h4>
+                  </div>
+                  <p className="text-xs text-grey font-body leading-relaxed mt-2">
                     High capital expenditure; tied to custom European proprietary tracker hardware. Not viable for Indian tariff economics.
                   </p>
                 </div>
@@ -206,6 +214,18 @@ export default function Market() {
                 </div>
               </div>
             ))}
+
+            <div className="pt-2">
+              <a
+                href="#roadmap"
+                className="btn-emerald w-full py-3 text-xs tracking-wider"
+              >
+                <span>View Strategic Roadmap</span>
+                <svg className="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
