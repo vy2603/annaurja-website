@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none" width="100%" height="100%">
+  <defs>
+    <!-- Gold gradient for wheat and sun -->
+    <linearGradient id="logoGold" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#966C1E" />
+      <stop offset="50%" stopColor="#B8892E" />
+      <stop offset="100%" stopColor="#E2B755" />
+    </linearGradient>
+
+    <!-- Deep green gradient for solar facets -->
+    <linearGradient id="logoGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#2A5A3D" />
+      <stop offset="70%" stopColor="#1F3D2B" />
+      <stop offset="100%" stopColor="#13271B" />
+    </linearGradient>
+
+    <!-- Radiant sun halo -->
+    <radialGradient id="logoSunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stopColor="#FFD875" stopOpacity="0.8" />
+      <stop offset="100%" stopColor="#B8892E" stopOpacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Outer circular subtle border -->
+  <circle cx="50" cy="50" r="46" stroke="url(#logoGold)" stroke-width="1.5" stroke-opacity="0.35" stroke-dasharray="3 2" />
+
+  <!-- Sun disc rising at the apex -->
+  <circle cx="50" cy="22" r="14" fill="url(#logoSunGlow)" />
+  <circle cx="50" cy="22" r="6" fill="url(#logoGold)" />
+  <!-- Radiant solar corona rays -->
+  <line x1="50" y1="10" x2="50" y2="7" stroke="url(#logoGold)" stroke-width="1.8" stroke-linecap="round" />
+  <line x1="60" y1="14" x2="63" y2="12" stroke="url(#logoGold)" stroke-width="1.8" stroke-linecap="round" />
+  <line x1="40" y1="14" x2="37" y2="12" stroke="url(#logoGold)" stroke-width="1.8" stroke-linecap="round" />
+
+  <!-- LEFT SIDE: Golden Wheat Stalk (ANNA / Food) -->
+  <!-- Central curved stem -->
+  <path d="M50 82 Q42 60 48 34" stroke="url(#logoGold)" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <!-- Lower grain kernel -->
+  <path d="M47 72 C36 68 32 58 44 60 C46 65 47 70 47 72 Z" fill="url(#logoGold)" />
+  <!-- Middle grain kernel -->
+  <path d="M46 58 C32 54 30 42 43 45 C45 50 46 55 46 58 Z" fill="url(#logoGold)" />
+  <!-- Upper grain kernel -->
+  <path d="M47 44 C36 38 36 28 47 32 C48 37 47 41 47 44 Z" fill="url(#logoGold)" />
+  <!-- Elegant wheat awns (whispers) -->
+  <path d="M34 56 Q24 48 20 40" stroke="url(#logoGold)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85" />
+  <path d="M36 42 Q28 32 24 22" stroke="url(#logoGold)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85" />
+  <path d="M40 30 Q34 20 32 10" stroke="url(#logoGold)" stroke-width="1.2" stroke-linecap="round" fill="none" opacity="0.85" />
+
+  <!-- RIGHT SIDE: Raised Solar Array Facets (URJA / Energy) -->
+  <!-- Upper angled PV panel -->
+  <polygon points="53,30 78,24 81,38 56,44" fill="url(#logoGreen)" stroke="url(#logoGold)" stroke-width="1.2" stroke-linejoin="round" />
+  <!-- Grid busbar lines for upper PV panel -->
+  <line x1="65" y1="27" x2="68" y2="41" stroke="#B8892E" stroke-width="0.8" opacity="0.7" />
+  <line x1="54" y1="37" x2="79" y2="31" stroke="#B8892E" stroke-width="0.8" opacity="0.7" />
+
+  <!-- Middle angled PV panel -->
+  <polygon points="55,47 80,42 82,56 57,61" fill="url(#logoGreen)" stroke="url(#logoGold)" stroke-width="1.2" stroke-linejoin="round" />
+  <!-- Grid busbar lines for middle PV panel -->
+  <line x1="67" y1="44" x2="69" y2="58" stroke="#B8892E" stroke-width="0.8" opacity="0.7" />
+  <line x1="56" y1="54" x2="81" y2="49" stroke="#B8892E" stroke-width="0.8" opacity="0.7" />
+
+  <!-- Lower angled PV panel -->
+  <polygon points="56,64 78,60 80,72 58,76" fill="url(#logoGreen)" stroke="url(#logoGold)" stroke-width="1.2" stroke-linejoin="round" />
+  <!-- Grid busbar lines for lower PV panel -->
+  <line x1="67" y1="62" x2="69" y2="74" stroke="#B8892E" stroke-width="0.8" opacity="0.7" />
+
+  <!-- Agrivoltaics elevated mounting pillar connecting PV to ground -->
+  <line x1="70" y1="74" x2="70" y2="84" stroke="url(#logoGold)" stroke-width="2" stroke-linecap="round" />
+  <line x1="56" y1="76" x2="56" y2="84" stroke="url(#logoGold)" stroke-width="1.8" stroke-linecap="round" />
+  <!-- Ground foundation base line -->
+  <path d="M38 84 L76 84" stroke="url(#logoGold)" stroke-width="2" stroke-linecap="round" />
+</svg>
