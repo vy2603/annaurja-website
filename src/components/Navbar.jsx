@@ -25,15 +25,16 @@ export default function Navbar() {
     }
   }, [mobileMenuOpen])
 
+  // Nav links: short concise labels for desktop header; full descriptive labels for mobile drawer
   const navLinks = [
-    { name: 'The Problem', href: '#problem', tag: '01', sub: 'PM-KUSUM Dilemma' },
-    { name: 'Why Now', href: '#why-now', tag: '02', sub: '37.5 MW to 300 GW' },
-    { name: '5-Step Solution', href: '#solution', tag: '03', sub: 'Boundary to Voice' },
-    { name: 'Technology', href: '#technology', tag: '04', sub: 'Google AI Stack' },
-    { name: 'Who Benefits', href: '#benefits', tag: '05', sub: 'Dual-Income Math' },
-    { name: 'Market & Matrix', href: '#market', tag: '06', sub: '10,000 MW Target' },
-    { name: 'Roadmap', href: '#roadmap', tag: '07', sub: 'Planner to Platform' },
-    { name: 'Team', href: '#team', tag: '08', sub: 'Research, Build & Sell' },
+    { shortName: 'Problem', fullName: 'The Problem', href: '#problem', tag: '01', sub: 'PM-KUSUM Dilemma' },
+    { shortName: 'Why Now', fullName: 'Why Now', href: '#why-now', tag: '02', sub: '37.5 MW to 300 GW' },
+    { shortName: 'Solution', fullName: '5-Step Solution', href: '#solution', tag: '03', sub: 'Boundary to Voice' },
+    { shortName: 'Technology', fullName: 'Technology', href: '#technology', tag: '04', sub: 'Google AI Stack' },
+    { shortName: 'Benefits', fullName: 'Who Benefits', href: '#benefits', tag: '05', sub: 'Dual-Income Math' },
+    { shortName: 'Market', fullName: 'Market & Matrix', href: '#market', tag: '06', sub: '10,000 MW Target' },
+    { shortName: 'Roadmap', fullName: 'Roadmap', href: '#roadmap', tag: '07', sub: 'Planner to Platform' },
+    { shortName: 'Team', fullName: 'Team', href: '#team', tag: '08', sub: 'Research, Build & Sell' },
   ]
 
   const handleLinkClick = () => {
@@ -50,32 +51,32 @@ export default function Navbar() {
             : 'bg-[#122217]/90 backdrop-blur-sm border-b border-white/15 py-3 sm:py-4'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
-          {/* Logo with high contrast */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4 lg:gap-8">
+          {/* Logo with strict shrink-0 to prevent any crowding */}
           <a
             href="#hero"
-            className="group focus:outline-none flex items-center"
+            className="group focus:outline-none flex items-center shrink-0"
             onClick={handleLinkClick}
             aria-label="AnnaUrja Homepage"
           >
             <Logo light={true} />
           </a>
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-5 xl:gap-7">
+          {/* Desktop Navigation Links (Clean single-word labels, ample breathing room) */}
+          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-5 2xl:gap-7 shrink-0">
             {navLinks.map((link) => (
               <a
-                key={link.name}
+                key={link.shortName}
                 href={link.href}
-                className="text-[11px] xl:text-xs uppercase tracking-[0.14em] font-medium text-white/85 hover:text-gold transition-colors duration-200 py-1.5 focus:outline-none focus:text-gold"
+                className="text-[11px] xl:text-xs uppercase tracking-[0.12em] font-semibold text-white/80 hover:text-gold transition-colors duration-200 py-1.5 focus:outline-none focus:text-gold whitespace-nowrap"
               >
-                {link.name}
+                {link.shortName}
               </a>
             ))}
 
             <a
               href="#solution"
-              className="btn-gold text-[11px] xl:text-xs px-5 py-2.5"
+              className="btn-gold text-[11px] xl:text-xs px-4 py-2 xl:px-5 xl:py-2.5 ml-1 xl:ml-2 whitespace-nowrap"
             >
               <span>Explore Plan</span>
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -84,20 +85,11 @@ export default function Navbar() {
             </a>
           </nav>
 
-          {/* Mobile Right Action Area: Prominent Always-Visible Buttons */}
-          <div className="lg:hidden flex items-center gap-2">
-            <a
-              href="#solution"
-              className="btn-gold text-[10px] sm:text-xs uppercase tracking-wider font-bold px-3 py-1.5 shadow-sm"
-              onClick={handleLinkClick}
-            >
-              <span>Plan</span>
-            </a>
-
-            {/* Mobile Menu Toggle Button */}
+          {/* Mobile Right Action Area: Dedicated, spacious MENU Pill Button (Zero overlap) */}
+          <div className="lg:hidden flex items-center shrink-0">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="min-h-[40px] px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 active:bg-white/30 border border-gold/70 text-white flex items-center gap-2 transition-all focus:outline-none focus:ring-2 focus:ring-gold shadow-md touch-manipulation"
+              className="min-h-[38px] px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 active:bg-white/30 border border-gold/70 text-white flex items-center gap-2.5 transition-all focus:outline-none focus:ring-2 focus:ring-gold shadow-md touch-manipulation"
               aria-label={mobileMenuOpen ? 'Close Navigation Menu' : 'Open Navigation Menu'}
               aria-expanded={mobileMenuOpen}
             >
@@ -159,7 +151,7 @@ export default function Navbar() {
 
             {navLinks.map((link) => (
               <a
-                key={link.name}
+                key={link.shortName}
                 href={link.href}
                 onClick={handleLinkClick}
                 className="flex items-center justify-between p-3 rounded-xl bg-white/5 hover:bg-gold/15 active:bg-gold/25 border border-white/10 hover:border-gold/50 transition-all text-white group min-h-[48px] touch-manipulation"
@@ -170,7 +162,7 @@ export default function Navbar() {
                   </span>
                   <div>
                     <span className="text-sm font-semibold tracking-wide block leading-snug">
-                      {link.name}
+                      {link.fullName}
                     </span>
                     <span className="text-[10px] text-white/50 block font-body">
                       {link.sub}

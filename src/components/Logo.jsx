@@ -1,9 +1,9 @@
 export default function Logo({ className = '', light = false, showTagline = false }) {
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
+    <div className={`flex items-center gap-2.5 sm:gap-3 shrink-0 select-none ${className}`}>
       {/* Bespoke Emblem Mark (Wheat Stalk + Solar Array) */}
       <svg
-        className="w-9 h-9 shrink-0 drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
+        className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 drop-shadow-sm transition-transform duration-300 group-hover:scale-105"
         viewBox="0 0 100 100"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -51,16 +51,16 @@ export default function Logo({ className = '', light = false, showTagline = fals
       </svg>
 
       {/* Wordmark */}
-      <div className="flex flex-col">
+      <div className="flex flex-col shrink-0">
         <span
-          className={`font-display text-2xl font-bold tracking-tight leading-none ${
+          className={`font-display text-xl sm:text-2xl font-bold tracking-tight leading-none whitespace-nowrap ${
             light ? 'text-white' : 'text-green'
           }`}
         >
           Anna<span className="text-gold">Urja</span>
         </span>
         {showTagline && (
-          <span className="text-[10px] tracking-widest uppercase font-medium text-gold mt-0.5">
+          <span className="text-[10px] tracking-widest uppercase font-medium text-gold mt-0.5 whitespace-nowrap">
             अन्न भी, ऊर्जा भी
           </span>
         )}
