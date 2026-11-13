@@ -7,11 +7,23 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 40)
+      setScrolled(window.scrollY > 30)
     }
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [mobileMenuOpen])
 
   const navLinks = [
     { name: 'Problem', href: '#problem' },
@@ -27,15 +39,15 @@ export default function Navbar() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'bg-cream/90 backdrop-blur-md shadow-sm border-b border-border py-3.5'
-          : 'bg-gradient-to-b from-black/50 via-black/20 to-transparent py-5'
+        scrolled || mobileMenuOpen
+          ? 'bg-cream/95 backdrop-blur-md shadow-sm border-b border-border py-3'
+          : 'bg-gradient-to-b from-black/60 via-black/25 to-transparent py-4'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#hero" className="group">
-          <Logo light={!scrolled} />
+        <a href="#hero" className="group" onClick={() => setMobileMenuOpen(false)}>
+          <Logo light={!scrolled && !mobileMenuOpen} />
         </a>
 
         {/* Desktop Links */}
@@ -59,26 +71,27 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Toggle Button */}
+        {/* Mobile Toggle Button with 44px touch target */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2 rounded-md focus:outline-none"
-          aria-label="Toggle navigation"
+          className="lg:hidden p-2.5 min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg focus:outline-none"
+          aria-label={mobileMenuOpen ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={mobileMenuOpen}
         >
           <div className="w-6 h-5 relative flex flex-col justify-between">
             <span
-              className={`w-full h-0.5 rounded transition-all ${
-                scrolled ? 'bg-green' : 'bg-white'
+              className={`w-full h-0.5 rounded transition-all duration-300 ${
+                scrolled || mobileMenuOpen ? 'bg-green' : 'bg-white'
               } ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}
             />
             <span
-              className={`w-full h-0.5 rounded transition-all ${
-                scrolled ? 'bg-green' : 'bg-white'
+              className={`w-full h-0.5 rounded transition-all duration-300 ${
+                scrolled || mobileMenuOpen ? 'bg-green' : 'bg-white'
               } ${mobileMenuOpen ? 'opacity-0' : ''}`}
             />
             <span
-              className={`w-full h-0.5 rounded transition-all ${
-                scrolled ? 'bg-green' : 'bg-white'
+              className={`w-full h-0.5 rounded transition-all duration-300 ${
+                scrolled || mobileMenuOpen ? 'bg-green' : 'bg-white'
               } ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}
             />
           </div>
@@ -87,25 +100,34 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-cream border-b border-border px-6 py-6 space-y-4 shadow-xl animate-in fade-in duration-200">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setMobileMenuOpen(false)}
-              className="block text-sm font-medium text-green hover:text-gold tracking-wide py-1"
-            >
-              {link.name}
-            </a>
-          ))}
-          <div className="pt-2">
+        <div className="lg:hidden fixed inset-x-0 top-[60px] bottom-0 bg-cream/98 backdrop-blur-xl border-b border-border px-6 py-6 flex flex-col justify-between overflow-y-auto animate-in fade-in duration-200 z-50">
+          <div className="space-y-1">
+            <span className="text-[10px] uppercase font-bold tracking-widest text-gold block mb-3 px-3">
+              Navigation
+            </span>
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-base font-medium text-green hover:text-gold tracking-wide py-3 px-3 rounded-xl hover:bg-green/5 transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          <div className="pt-6 border-t border-border mt-4">
             <a
               href="#solution"
               onClick={() => setMobileMenuOpen(false)}
-              className="block text-center text-xs uppercase tracking-wider font-semibold px-4 py-2.5 rounded-full bg-gold text-white"
+              className="block text-center text-xs uppercase tracking-wider font-semibold py-3.5 px-6 rounded-full bg-gold text-white shadow-md"
             >
-              Explore Plan
+              Explore Plan in 5 Steps
             </a>
+            <p className="text-[11px] text-grey text-center mt-3 font-body">
+              AnnaUrja — Anna bhi, Urja bhi.
+            </p>
           </div>
         </div>
       )}

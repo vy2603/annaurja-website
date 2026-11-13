@@ -16,6 +16,7 @@ import Team from './sections/Team'
 import Footer from './components/Footer'
 
 gsap.registerPlugin(ScrollTrigger)
+ScrollTrigger.config({ ignoreMobileResize: true })
 
 export default function App() {
   useEffect(() => {

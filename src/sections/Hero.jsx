@@ -50,14 +50,15 @@ export default function Hero() {
 
     const ctx = gsap.context(() => {
       const refs = sceneRefs.current
+      const isMobile = window.innerWidth < 768
 
-      // Pinned master scroll timeline (3.5x viewport height for smooth storytelling)
+      // Pinned master scroll timeline (snappy 2x on mobile, 3.5x on desktop)
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: wrapperRef.current,
           start: 'top top',
-          end: '+=350%',
-          scrub: 1.2,
+          end: isMobile ? '+=200%' : '+=350%',
+          scrub: isMobile ? 0.8 : 1.2,
           pin: true,
           anticipatePin: 1,
         },
@@ -66,10 +67,9 @@ export default function Hero() {
       // ==========================================
       // PHASE 1: Initial wide farmland (0.00 -> 0.30)
       // ==========================================
-      // Initial prompt fades out as soon as the user starts scrolling
       tl.to(
         initialPromptRef.current,
-        { opacity: 0, y: -20, duration: 0.12, ease: 'power1.out' },
+        { opacity: 0, y: -15, duration: 0.12, ease: 'power1.out' },
         0
       )
 
@@ -102,7 +102,7 @@ export default function Hero() {
       }
 
       // ==========================================
-      // PHASE 2: Elevated solar panels rise into place (0.25 -> 0.55)
+      // PHASE 2: Elevated solar panels rise into place (0.22 -> 0.55)
       // ==========================================
       if (refs.panelGroups && refs.panelGroups.length > 0) {
         refs.panelGroups.forEach((panel, i) => {
@@ -144,9 +144,9 @@ export default function Hero() {
         tl.to(
           refs.cameraGroup,
           {
-            scale: 1.45,
-            x: -160,
-            y: -190,
+            scale: isMobile ? 1.3 : 1.45,
+            x: isMobile ? -80 : -160,
+            y: isMobile ? -140 : -190,
             transformOrigin: '50% 65%',
             duration: 0.3,
             ease: 'power2.inOut',
@@ -185,7 +185,7 @@ export default function Hero() {
         )
       }
 
-      // Crops under panels flourish and expand foliage in the protected microclimate
+      // Crops under panels flourish
       if (refs.cropRows && refs.cropRows.length > 0) {
         refs.cropRows.forEach((row, i) => {
           if (row) {
@@ -201,7 +201,6 @@ export default function Hero() {
       // ==========================================
       // PHASE 4: Headline, Hindi tagline and CTA reveal (0.72 -> 1.00)
       // ==========================================
-      // Darken viewport background overlay slightly for editorial typography contrast
       tl.to(
         overlayRef.current,
         { opacity: 0.58, duration: 0.2 },
@@ -210,28 +209,28 @@ export default function Hero() {
 
       tl.fromTo(
         hindiRef.current,
-        { opacity: 0, y: 24 },
+        { opacity: 0, y: 20 },
         { opacity: 1, y: 0, duration: 0.1, ease: 'power2.out' },
         0.75
       )
 
       tl.fromTo(
         taglineRef.current,
-        { opacity: 0, y: 32 },
+        { opacity: 0, y: 25 },
         { opacity: 1, y: 0, duration: 0.14, ease: 'power2.out' },
         0.78
       )
 
       tl.fromTo(
         subtitleRef.current,
-        { opacity: 0, y: 20 },
+        { opacity: 0, y: 15 },
         { opacity: 1, y: 0, duration: 0.12, ease: 'power2.out' },
         0.84
       )
 
       tl.fromTo(
         ctaRef.current,
-        { opacity: 0, y: 16, scale: 0.96 },
+        { opacity: 0, y: 12, scale: 0.96 },
         { opacity: 1, y: 0, scale: 1, duration: 0.12, ease: 'back.out(1.4)' },
         0.89
       )
@@ -244,7 +243,7 @@ export default function Hero() {
   return (
     <section
       ref={wrapperRef}
-      className="relative w-full h-screen overflow-hidden bg-cream"
+      className="relative w-full h-[100dvh] min-h-[580px] overflow-hidden bg-cream"
       id="hero"
     >
       {/* Layered SVG Farm & Solar Scene */}
@@ -252,7 +251,7 @@ export default function Hero() {
         <FarmScene sceneRefs={sceneRefs} />
       </div>
 
-      {/* Fallback image slots for graceful fallback or custom image replacement */}
+      {/* Fallback image slots */}
       <noscript>
         <img
           src="/images/hero-farm.jpg"
@@ -268,18 +267,18 @@ export default function Hero() {
         style={{ opacity: 0.15 }}
       />
 
-      {/* INITIAL SCROLL PROMPT (Visible on first arrival before scroll starts) */}
+      {/* INITIAL SCROLL PROMPT */}
       <div
         ref={initialPromptRef}
-        className="absolute inset-x-0 bottom-12 z-20 flex flex-col items-center justify-center text-center px-4 pointer-events-none"
+        className="absolute inset-x-0 bottom-6 sm:bottom-10 z-20 flex flex-col items-center justify-center text-center px-4 pointer-events-none"
       >
-        <div className="backdrop-blur-md bg-white/20 border border-white/30 text-white px-5 py-2.5 rounded-full shadow-lg flex items-center gap-3">
+        <div className="backdrop-blur-md bg-black/30 border border-white/20 text-white px-4 py-2 sm:px-5 sm:py-2.5 rounded-full shadow-lg flex items-center gap-2.5">
           <span className="w-2 h-2 rounded-full bg-gold animate-ping" />
-          <span className="text-xs uppercase tracking-widest font-medium text-white/90">
-            Scroll to elevate panels &amp; explore agrivoltaics
+          <span className="text-[11px] sm:text-xs uppercase tracking-wider sm:tracking-widest font-medium text-white/90">
+            Scroll to elevate panels &amp; explore
           </span>
           <svg
-            className="w-4 h-4 text-gold animate-bounce"
+            className="w-3.5 h-3.5 text-gold animate-bounce"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -289,38 +288,38 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* MAIN HEADLINE CONTENT (Revealed as you move under the panels) */}
+      {/* MAIN HEADLINE CONTENT */}
       <div
         ref={contentRef}
-        className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6 max-w-4xl mx-auto"
+        className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4 sm:px-6 max-w-4xl mx-auto pt-12 sm:pt-0"
       >
         <p
           ref={hindiRef}
-          className="text-gold text-lg md:text-xl font-medium tracking-[0.2em] mb-4 opacity-0 drop-shadow"
+          className="text-gold text-base sm:text-lg md:text-xl font-medium tracking-[0.2em] mb-3 sm:mb-4 opacity-0 drop-shadow"
         >
           अन्न भी, ऊर्जा भी
         </p>
 
         <h1
           ref={taglineRef}
-          className="font-display text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.12] tracking-tight mb-6 opacity-0 drop-shadow-md"
+          className="font-display text-white text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-medium leading-[1.15] tracking-tight mb-4 sm:mb-6 opacity-0 drop-shadow-md"
         >
-          Grow food and power<br className="hidden sm:inline" /> on the same land.
+          Grow food and power<br /> on the same land.
         </h1>
 
         <p
           ref={subtitleRef}
-          className="text-white/90 font-body text-base md:text-lg lg:text-xl font-light leading-relaxed mb-10 max-w-2xl opacity-0 drop-shadow"
+          className="text-white/90 font-body text-sm sm:text-base md:text-lg lg:text-xl font-light leading-relaxed mb-6 sm:mb-10 max-w-2xl opacity-0 drop-shadow"
         >
           AnnaUrja is an AI agrivoltaics planner for India.
-          <br className="hidden md:inline" />
-          Site to report — in minutes, not months.
+          <br className="hidden sm:inline" />
+          {' '}Site to report — in minutes, not months.
         </p>
 
         <div ref={ctaRef} className="opacity-0">
           <a
             href="#solution"
-            className="inline-flex items-center gap-3 bg-gold hover:bg-[#a67926] text-white px-8 py-4 rounded-full font-body text-sm font-medium tracking-wider uppercase transition-all duration-300 shadow-xl hover:shadow-2xl hover:-translate-y-0.5"
+            className="inline-flex items-center gap-2.5 sm:gap-3 bg-gold hover:bg-[#a67926] text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-full font-body text-xs sm:text-sm font-semibold tracking-wider uppercase transition-all duration-300 shadow-xl hover:shadow-2xl active:scale-95"
           >
             <span>See how it works</span>
             <svg

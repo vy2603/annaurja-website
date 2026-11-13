@@ -13,7 +13,7 @@ export default function Technology() {
       num: '01',
       title: 'Land & Climate Data',
       icon: (
-        <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <circle cx="12" cy="12" r="10" strokeWidth="1.5" />
           <path strokeWidth="1.5" d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" />
         </svg>
@@ -31,7 +31,7 @@ export default function Technology() {
       num: '02',
       title: 'Fixed Models',
       icon: (
-        <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <rect x="4" y="4" width="16" height="16" rx="2" strokeWidth="1.5" />
           <path strokeWidth="1.5" d="M8 8h8M8 12h8M8 16h4" />
         </svg>
@@ -49,7 +49,7 @@ export default function Technology() {
       num: '03',
       title: 'Google AI Models',
       icon: (
-        <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeWidth="1.5" d="M12 3v18m-9-9h18M6.3 6.3l11.4 11.4M6.3 17.7L17.7 6.3" />
         </svg>
       ),
@@ -66,7 +66,7 @@ export default function Technology() {
       num: '04',
       title: 'Actionable Outputs',
       icon: (
-        <svg className="w-6 h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 sm:w-6 sm:h-6 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeWidth="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
       ),
@@ -112,34 +112,34 @@ export default function Technology() {
     <section
       ref={sectionRef}
       id="technology"
-      className="py-24 md:py-32 bg-cream text-green relative overflow-hidden border-b border-border"
+      className="py-16 sm:py-24 md:py-32 bg-cream text-green relative overflow-hidden border-b border-border"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs uppercase tracking-[0.2em] font-semibold text-gold block mb-3">
+        <div className="max-w-3xl mb-10 sm:mb-16">
+          <span className="text-xs uppercase tracking-[0.2em] font-semibold text-gold block mb-2 sm:mb-3">
             Technology Architecture
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.2] mb-6">
+          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.2] mb-4 sm:mb-6">
             Built on Google AI and India's own farm data
           </h2>
-          <p className="text-grey font-body text-base md:text-lg leading-relaxed">
+          <p className="text-grey font-body text-sm sm:text-base md:text-lg leading-relaxed">
             A hybrid deterministic-AI architecture designed so financial decisions
             rest on mathematically proven physics while Google AI bridges the human and agronomic divide.
           </p>
         </div>
 
         {/* 4-Stage Flow Diagram */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
           {stages.map((stage, idx) => (
             <div
               key={stage.num}
               ref={(el) => (columnsRef.current[idx] = el)}
-              className="bg-white rounded-2xl border border-border p-7 shadow-sm hover:shadow-md hover:border-gold/50 transition-all flex flex-col justify-between"
+              className="bg-white rounded-2xl border border-border p-5 sm:p-7 shadow-sm hover:shadow-md hover:border-gold/50 transition-all flex flex-col justify-between"
             >
               <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-gold/10 flex items-center justify-center">
+                <div className="flex items-center justify-between mb-3 sm:mb-4">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gold/10 flex items-center justify-center">
                     {stage.icon}
                   </div>
                   <span className="font-display text-xs font-bold text-grey">
@@ -150,11 +150,11 @@ export default function Technology() {
                 <span className="text-[10px] uppercase tracking-wider font-semibold text-gold block mb-1">
                   {stage.role}
                 </span>
-                <h3 className="font-display text-xl font-semibold text-green mb-4">
+                <h3 className="font-display text-lg sm:text-xl font-semibold text-green mb-3 sm:mb-4">
                   {stage.title}
                 </h3>
 
-                <ul className="space-y-3 font-body text-xs text-grey">
+                <ul className="space-y-2.5 font-body text-xs text-grey">
                   {stage.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 leading-relaxed">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold mt-1.5 shrink-0" />
@@ -165,7 +165,7 @@ export default function Technology() {
               </div>
 
               {stage.highlight && (
-                <div className="mt-6 pt-4 border-t border-border/60">
+                <div className="mt-5 sm:mt-6 pt-3 sm:pt-4 border-t border-border/60">
                   <span className="text-[11px] font-semibold text-gold italic block">
                     {stage.highlight}
                   </span>
@@ -176,18 +176,18 @@ export default function Technology() {
         </div>
 
         {/* Google Cloud India Infrastructure Banner */}
-        <div className="rounded-2xl bg-[#1F3D2B] text-white p-8 md:p-10 shadow-xl border border-gold/30">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-6 pb-6 border-b border-white/10">
+        <div className="rounded-2xl bg-[#1F3D2B] text-white p-6 sm:p-8 md:p-10 shadow-xl border border-gold/30">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 sm:gap-6 pb-5 sm:pb-6 border-b border-white/10">
             <div>
-              <span className="text-xs uppercase tracking-widest text-gold font-semibold block mb-1">
+              <span className="text-[11px] sm:text-xs uppercase tracking-widest text-gold font-semibold block mb-1">
                 Cloud Backbone
               </span>
-              <p className="font-display text-xl sm:text-2xl font-medium text-white">
+              <p className="font-display text-lg sm:text-2xl font-medium text-white">
                 Google Cloud, India region
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-2 text-xs font-body">
+            <div className="flex flex-wrap gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-body">
               {[
                 'Cloud Run',
                 'BigQuery',
@@ -199,7 +199,7 @@ export default function Technology() {
               ].map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white/90"
+                  className="px-2.5 sm:px-3 py-1 rounded-full bg-white/10 border border-white/15 text-white/90"
                 >
                   {tech}
                 </span>
@@ -208,8 +208,8 @@ export default function Technology() {
           </div>
 
           {/* The Golden AI Principle Statement */}
-          <div className="pt-6 text-center">
-            <p className="font-display text-lg sm:text-xl md:text-2xl text-gold font-medium italic">
+          <div className="pt-5 sm:pt-6 text-center">
+            <p className="font-display text-base sm:text-xl md:text-2xl text-gold font-medium italic leading-relaxed">
               "Fixed models compute every figure; Gemini advises and explains, so AI never invents a number."
             </p>
           </div>

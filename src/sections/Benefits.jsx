@@ -24,7 +24,7 @@ export default function Benefits() {
       ],
     },
     {
-      role: 'Solar Developers & Installers',
+      role: 'Developers & Installers',
       tagline: 'First Paying Customer — Developer Pro Subscription',
       badge: 'B2B SaaS Core',
       icon: '⚡',
@@ -48,7 +48,7 @@ export default function Benefits() {
       ],
     },
     {
-      role: 'Farmer Producer Organisations (FPOs)',
+      role: 'FPOs',
       tagline: 'Collective Bargaining Power for Village Clusters',
       badge: 'Low-Cost Plan',
       icon: '👥',
@@ -60,7 +60,7 @@ export default function Benefits() {
       ],
     },
     {
-      role: 'State Agencies & DISCOMs',
+      role: 'State Agencies',
       tagline: 'Objective Screening & Agricultural Compliance',
       badge: 'Annual License',
       icon: '🏛️',
@@ -82,7 +82,6 @@ export default function Benefits() {
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 
-    // Animate farmer earning numbers on scroll
     const animateVal = (ref, target) => {
       if (!ref.current) return
       const obj = { val: 0 }
@@ -110,31 +109,31 @@ export default function Benefits() {
     <section
       ref={sectionRef}
       id="benefits"
-      className="py-24 md:py-32 bg-cream text-green relative overflow-hidden border-b border-border"
+      className="py-16 sm:py-24 md:py-32 bg-cream text-green relative overflow-hidden border-b border-border"
     >
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <span className="text-xs uppercase tracking-[0.2em] font-semibold text-gold block mb-3">
+        <div className="max-w-3xl mb-10 sm:mb-16">
+          <span className="text-xs uppercase tracking-[0.2em] font-semibold text-gold block mb-2 sm:mb-3">
             Value Proposition &amp; Business Model
           </span>
-          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.2] mb-6">
+          <h2 className="font-display text-2xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-[1.2] mb-4 sm:mb-6">
             Every party gains, and AnnaUrja earns recurring revenue
           </h2>
-          <p className="text-grey font-body text-base md:text-lg leading-relaxed">
+          <p className="text-grey font-body text-sm sm:text-base md:text-lg leading-relaxed">
             Free for every Indian farmer. Monetized through B2B SaaS for developers,
             transactional DPR risk reports for banks, and compliance licenses for state agencies.
           </p>
         </div>
 
         {/* Farmer Dual Income Callout Banner */}
-        <div className="bg-[#1F3D2B] text-white rounded-2xl p-8 md:p-12 mb-16 shadow-xl border border-gold/40">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <div className="bg-[#1F3D2B] text-white rounded-2xl p-6 sm:p-8 md:p-12 mb-12 sm:mb-16 shadow-xl border border-gold/40">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-center">
             <div className="lg:col-span-4">
-              <span className="text-xs uppercase tracking-widest text-gold font-semibold block mb-2">
+              <span className="text-[11px] sm:text-xs uppercase tracking-widest text-gold font-semibold block mb-1 sm:mb-2">
                 Farmer Income Potential (PIB Factsheet)
               </span>
-              <h3 className="font-display text-2xl sm:text-3xl font-medium text-white mb-2">
+              <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-medium text-white mb-2">
                 Guaranteed Cashflow on Every Acre
               </h3>
               <p className="text-xs text-white/70 font-body leading-relaxed">
@@ -143,35 +142,35 @@ export default function Benefits() {
               </p>
             </div>
 
-            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {/* Option A: Leasing */}
-              <div className="bg-white/10 rounded-xl p-6 border border-white/15">
-                <span className="text-xs text-gold uppercase tracking-wider font-semibold block mb-1">
+              <div className="bg-white/10 rounded-xl p-5 sm:p-6 border border-white/15">
+                <span className="text-[11px] sm:text-xs text-gold uppercase tracking-wider font-semibold block mb-1">
                   Option A · Developer Lease
                 </span>
-                <div ref={num25Ref} className="font-display text-3xl sm:text-4xl font-bold text-white mb-2">
+                <div ref={num25Ref} className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1.5 sm:mb-2">
                   ₹25,000
                 </div>
                 <p className="text-xs text-white/80 font-body mb-2">
                   per acre per year paid by the solar developer
                 </p>
-                <span className="text-[11px] text-gold font-medium">
+                <span className="text-[10px] sm:text-[11px] text-gold font-medium">
                   + 100% of the crop harvest income
                 </span>
               </div>
 
               {/* Option B: Bank Loan Plant Ownership */}
-              <div className="bg-white/10 rounded-xl p-6 border border-white/15">
-                <span className="text-xs text-gold uppercase tracking-wider font-semibold block mb-1">
+              <div className="bg-white/10 rounded-xl p-5 sm:p-6 border border-white/15">
+                <span className="text-[11px] sm:text-xs text-gold uppercase tracking-wider font-semibold block mb-1">
                   Option B · Farmer Plant Ownership
                 </span>
-                <div ref={num65Ref} className="font-display text-3xl sm:text-4xl font-bold text-white mb-2">
+                <div ref={num65Ref} className="font-display text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1.5 sm:mb-2">
                   ₹65,000
                 </div>
                 <p className="text-xs text-white/80 font-body mb-2">
                   per acre per year owning the plant with a bank loan
                 </p>
-                <span className="text-[11px] text-gold font-medium">
+                <span className="text-[10px] sm:text-[11px] text-gold font-medium">
                   + 100% of the crop harvest income
                 </span>
               </div>
@@ -179,48 +178,48 @@ export default function Benefits() {
           </div>
         </div>
 
-        {/* Interactive Stakeholder Tabs */}
-        <div className="mb-16">
-          <div className="flex flex-wrap gap-2 mb-8 border-b border-border pb-4">
+        {/* Interactive Stakeholder Tabs with Horizontal Touch Scroll */}
+        <div className="mb-12 sm:mb-16">
+          <div className="flex overflow-x-auto no-scrollbar gap-2 mb-6 sm:mb-8 border-b border-border pb-3 sm:pb-4 snap-x touch-pan-x">
             {stakeholders.map((s, idx) => (
               <button
                 key={s.role}
                 onClick={() => setSelectedStakeholder(idx)}
-                className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider uppercase transition-all ${
+                className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs font-semibold tracking-wider uppercase transition-all shrink-0 snap-start touch-manipulation ${
                   selectedStakeholder === idx
                     ? 'bg-gold text-white shadow-md'
                     : 'bg-white text-grey border border-border hover:border-gold/50'
                 }`}
               >
-                <span className="mr-2">{s.icon}</span>
+                <span className="mr-1.5 sm:mr-2">{s.icon}</span>
                 {s.role}
               </button>
             ))}
           </div>
 
           {/* Active Stakeholder Card */}
-          <div className="bg-white rounded-2xl border border-border p-8 md:p-10 shadow-sm">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-6 border-b border-border/70">
+          <div className="bg-white rounded-2xl border border-border p-5 sm:p-8 md:p-10 shadow-sm">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-border/70">
               <div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-gold block mb-1">
+                <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-wider text-gold block mb-1">
                   {stakeholders[selectedStakeholder].role}
                 </span>
-                <h3 className="font-display text-2xl sm:text-3xl font-semibold text-green">
+                <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold text-green leading-snug">
                   {stakeholders[selectedStakeholder].tagline}
                 </h3>
               </div>
-              <span className="px-4 py-1.5 rounded-full bg-gold/15 text-gold text-xs font-bold uppercase tracking-wider shrink-0 self-start sm:self-auto">
+              <span className="px-3 py-1 rounded-full bg-gold/15 text-gold text-[10px] sm:text-xs font-bold uppercase tracking-wider shrink-0 self-start sm:self-auto">
                 {stakeholders[selectedStakeholder].badge}
               </span>
             </div>
 
-            <p className="text-sm md:text-base font-body text-grey leading-relaxed mb-6">
+            <p className="text-xs sm:text-sm md:text-base font-body text-grey leading-relaxed mb-6">
               {stakeholders[selectedStakeholder].offer}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 pt-1">
               {stakeholders[selectedStakeholder].benefits.map((benefit, i) => (
-                <div key={i} className="p-4 rounded-xl bg-cream border border-border/60 text-xs text-grey font-body leading-relaxed flex items-start gap-2.5">
+                <div key={i} className="p-3.5 sm:p-4 rounded-xl bg-cream border border-border/60 text-xs text-grey font-body leading-relaxed flex items-start gap-2 sm:gap-2.5">
                   <span className="text-gold font-bold">✓</span>
                   <span>{benefit}</span>
                 </div>
@@ -229,13 +228,13 @@ export default function Benefits() {
           </div>
         </div>
 
-        {/* B2B SaaS Annual Revenue Scenarios from Slide 7 */}
-        <div className="bg-white rounded-2xl border border-border p-8 md:p-10 shadow-sm">
+        {/* B2B SaaS Annual Revenue Scenarios */}
+        <div className="bg-white rounded-2xl border border-border p-5 sm:p-8 md:p-10 shadow-sm">
           <div className="mb-6">
             <span className="text-xs uppercase tracking-widest text-gold font-semibold block mb-1">
               Commercial Viability
             </span>
-            <h3 className="font-display text-2xl font-semibold text-green">
+            <h3 className="font-display text-xl sm:text-2xl font-semibold text-green">
               Annual Revenue Scenarios (Illustrative)
             </h3>
             <p className="text-xs text-grey font-body mt-1">
@@ -243,35 +242,35 @@ export default function Benefits() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
             {revenueScenarios.map((scen, idx) => (
               <div
                 key={scen.tier}
-                className={`p-6 rounded-xl border flex flex-col justify-between ${
+                className={`p-5 sm:p-6 rounded-xl border flex flex-col justify-between ${
                   idx === 1
                     ? 'bg-cream border-gold ring-1 ring-gold/40'
                     : 'bg-white border-border'
                 }`}
               >
                 <div>
-                  <span className="text-xs uppercase tracking-wider font-semibold text-grey block mb-2">
+                  <span className="text-[10px] sm:text-xs uppercase tracking-wider font-semibold text-grey block mb-1.5 sm:mb-2">
                     {scen.tier}
                   </span>
-                  <div className="font-display text-3xl font-bold text-green mb-2">
+                  <div className="font-display text-2xl sm:text-3xl font-bold text-green mb-1.5 sm:mb-2">
                     {scen.amount}
                   </div>
                   <p className="text-xs font-body text-grey leading-relaxed">
                     {scen.desc}
                   </p>
                 </div>
-                <div className="mt-4 pt-3 border-t border-border/60 text-[11px] text-gold font-medium">
+                <div className="mt-4 pt-3 border-t border-border/60 text-[10px] sm:text-[11px] text-gold font-medium">
                   {idx === 1 ? '★ Base Target Model' : 'Scenario Projection'}
                 </div>
               </div>
             ))}
           </div>
 
-          <p className="text-[11px] text-grey/70 italic mt-6 text-center font-body">
+          <p className="text-[10px] sm:text-[11px] text-grey/70 italic mt-6 text-center font-body">
             Source: PIB factsheet on PM-KUSUM. Revenue scenarios are illustrative models, not financial forecasts.
           </p>
         </div>
